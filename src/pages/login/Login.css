@@ -1,9 +1,7 @@
-
 .login-container {
     display: flex;
     text-align: center;
     align-items: center;
-    border: 2px solid rgb(77, 138, 228);
     border-radius: 10px;
     flex-direction: column;
 
@@ -16,7 +14,6 @@
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -43,46 +40,32 @@
 #login-input-pw,
 #login-input-id {
     width: 75%;
-    border: 1px solid rgb(77, 138, 228);
+    border: 1px solid #5d6dbe;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 5%;
 }
 #login-input-pw:focus,
 #login-input-id:focus {
-    border: 2px solid rgb(77, 138, 228);
+    border: 2px solid #5d6dbe;
     outline: none;
 }
 
-.login-error-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.login-error {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    font-size: small;
-}
 .login-error p {
     display: grid;
     place-items: center!important;
 }
 .login-button button {
     color: white;
-    background-color: rgb(77, 138, 228);
+    background-color: #5d6dbe;
     border: none;
-    width: 85%;
+    width: 75%;
     padding: 20px;
     cursor: pointer;
     border-radius: 10px;
-    margin-bottom: 5%;
+}
+.login-button button:hover {
+    text-decoration: underline;
 }
 .account-add-button button {
     color: rgb(0, 0, 0);

@@ -1,0 +1,79 @@
+.join-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 100%;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.join-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.join-input {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#join-input-email,
+#join-input-port,
+#join-input-nick,
+#join-input-pw,
+#join-input-id {
+    width: 350px;
+    border: 1px solid #5d6dbe;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+#join-input-pw:focus,
+#join-input-id:focus {
+    border: 2px solid #5d6dbe;
+    outline: none;
+}
+
+.join-error-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.join-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: small;
+}
+.join-error p {
+    display: grid;
+    place-items: center!important;
+}
+.join-button button {
+    color: white;
+    background-color: #5d6dbe;
+    border: none;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/*
+.join-button button {
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border: none;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: underline;
+}*/
+.join-button button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
