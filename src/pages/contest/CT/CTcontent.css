@@ -1,0 +1,73 @@
+.CTcontainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.contestbanner {
+    width: 100%;
+    height: auto;
+}
+.CTtoptitle {
+    margin-top: 10px;
+    padding: 20px;
+    border-bottom: 1px solid gray;
+    font-size: large;
+    margin-bottom: 30px;
+}
+.CTevaluationfontsize,
+.CTparticipationfontsize,
+.CTprocessfontsize {
+    margin-top: 50px;
+    font-size: large;
+    font-weight: bold;
+}
+.CTprocess {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+}
+
+.CTprocessstep {
+    background-color: #9bceff;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.CTprocessstep-content p {
+    font-size: 0.6em;
+    margin-bottom: 5px;
+}
+.CTarrow {
+    font-size: 1em;
+    color: #000000;
+}
+.CTevaluation,
+.CTparticipation {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 10px 0;
+}
+.CTbutton {
+    width: 90%;
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    gap:10px;
+    border-radius: 10px;
+}
+.CTbutton button {
+    padding:20px;
+    background-color: #9bceff;
+    border-radius: 10px;
+    width: 20%;
+}

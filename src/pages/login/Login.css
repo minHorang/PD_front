@@ -1,0 +1,105 @@
+
+.login-container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px solid rgb(77, 138, 228);
+    border-radius: 10px;
+    flex-direction: column;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: white; /* 배경색 추가 */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* 로그인 컨테이너 바로 아래 */
+}
+
+.login-logo{
+    width: 50%;
+    height: auto;
+    margin: 25px;
+}
+.login-title {
+    margin-bottom: 5%;
+}
+.login-input {
+    width: 100%;
+    height: auto;
+}
+
+#login-input-pw,
+#login-input-id {
+    width: 75%;
+    border: 1px solid rgb(77, 138, 228);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+#login-input-pw:focus,
+#login-input-id:focus {
+    border: 2px solid rgb(77, 138, 228);
+    outline: none;
+}
+
+.login-error-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: small;
+}
+.login-error p {
+    display: grid;
+    place-items: center!important;
+}
+.login-button button {
+    color: white;
+    background-color: rgb(77, 138, 228);
+    border: none;
+    width: 85%;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+.account-add-button button {
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border: none;
+    width: 85%;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: underline;
+}
+.account-add-button button:hover {
+    color: rgb(77, 138, 228);
+    background-color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    width: 85%;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: underline;
+}

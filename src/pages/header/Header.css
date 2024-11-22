@@ -1,0 +1,45 @@
+.Headercontainer{
+    display: flex;
+    flex-direction: row;
+    max-height: 160px;
+}
+.header-logo {
+    width: 20%;
+    height: auto;
+    cursor: pointer;
+}
+.TopButtonbar{
+    margin-top: 90px;
+    margin-bottom: 20px;
+    width :100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+.TopButtonbar button {
+    width: 30%;
+}
+.left-buttons {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    gap: 10px;
+}
+
+.right-buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    gap: 10px;
+}
+.boardbutton,
+.pdbutton,
+.contestbutton{
+    width: 15%;
+}
+.loginbutton,
+.mypagebutton{
+    width: 15%;
+}
