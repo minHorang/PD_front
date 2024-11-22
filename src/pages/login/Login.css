@@ -50,7 +50,42 @@
     border: 2px solid #5d6dbe;
     outline: none;
 }
-
+.portfolio-upload-wrapper {
+    border: 1px solid #5d6dbe;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .portfolio-upload p {
+    font-size: 14px;
+    color: #878787;
+    display: block;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .portfolio-upload input {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .porturl {
+    display: flex;
+    flex-direction: row;
+  }
+  .portfolio-upload p a {
+    color: #ffffff;
+    background-color: #6978c2;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 13px;
+  }
+  
+.portfolio-upload {
+    margin-top: 10px;
+  }
+  
 .login-error p {
     display: grid;
     place-items: center!important;

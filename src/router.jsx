@@ -12,6 +12,7 @@ import PDdetail from './pages/projectdesign/PDdetail/PDdetail';
 import Apply from './pages/contest/contestdetail/Apply';
 import Getteam from './pages/contest/contestdetail/Getteam';
 import GTdetail from './pages/contest/contestdetail/GTdetail/GTdetail';
+import DynamicWrite from './pages/write/DynamicWrite';
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: 'mypage',
         element: <Mypage />,
+      },
+      {
+        path: ':top/:sub/:final',
+        element: <DynamicWrite />, // 동적 경로 처리
       },
     ],
     errorElement: <NotFoundError />,

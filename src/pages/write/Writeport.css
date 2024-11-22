@@ -1,0 +1,65 @@
+.W-port-container {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.W-port-toptitle {
+    padding: 20px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 40px;
+}
+.W-port-form {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .W-port-field {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .W-port-field label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .W-port-field input[type="text"] {
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+  
+  .W-port-field input[type="file"] {
+    padding: 5px;
+    font-size: 14px;
+  }
+  .port-pdf-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .W-port-field input:focus {
+    outline: none; 
+    border: 1px solid #999; 
+  }
+  .W-port-submit {
+    background-color: #9dc4ff;
+    color: #000000;
+    padding: 15px 60px;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    align-self: center;
+  }

@@ -43,15 +43,14 @@
 
 .join-error {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    width: 75%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    width: 90%;
     font-size: small;
 }
 .join-error p {
     display: grid;
+    color: red;
     place-items: center!important;
 }
 .join-button button {

@@ -1,0 +1,118 @@
+.mypage-container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .mypage-header {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+  
+  .mypage-nickname {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .mypage-username {
+    font-size: 15px;
+    color: #555;
+  }
+  
+  .mypage-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .mypage-section {
+    width: 45%;
+  }
+  
+  .section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .content-list {
+    list-style-type: none;
+    padding: 0;
+    border-top: 1px solid #ddd;
+  }
+  
+  .content-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+  }
+  
+  .mypage-write {
+      text-align: left;
+      display: flex;
+      justify-content: left;
+  }
+  .mypage-write p {
+    width: 20%;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .write-link {
+    display: flex;
+    font-size: 16px;
+    color: black;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    text-decoration: none;
+  }
+  
+  .write-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* 활성화된 버튼 스타일 */
+  .write-link.active {
+    color: #4d8ae4;
+    font-weight: bold;
+  }
+  
+  /* 상위 링크 목록 */
+  .write-links {
+    width: 20%;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  /* 하위 링크 목록 */
+  .write-categories {
+    width: 20%;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .write-final-categories {
+    width: 20%;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
