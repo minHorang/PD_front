@@ -21,7 +21,7 @@ function Portapply() {
           </div>
           <div className="apply-port-field">
             <div className="apply-port-field apply-port-pdf-box">
-              <label htmlFor="portfolio">포트폴리오 PDF</label>
+              <label htmlFor="portfolio">팀 포트폴리오 PDF</label>
               <input type="file" id="portfolio" accept="application/pdf" />
             </div>
           </div>
