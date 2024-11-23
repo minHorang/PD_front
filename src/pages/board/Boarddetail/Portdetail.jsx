@@ -1,13 +1,19 @@
 import React from 'react';
 import { Worker, Viewer } from '@react-pdf-viewer/core';
 import { useParams, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import './Portdetail.css';
 
 function Portdetail() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const location = useLocation();
   const item = location.state;
+
+  const handleapply = () => {
+    navigate('/board/port/apply');
+  };
 
   if (!id) {
     return <p>ID가 제공되지 않았습니다.</p>;
@@ -24,7 +30,7 @@ function Portdetail() {
         </Worker>
         <div className="portpdf">{item.content}</div>
         <div className="portbutton">
-          <button>프로젝트 제의하기</button>
+          <button onClick={handleapply}>프로젝트 제의하기</button>
         </div>
       </div>
     </div>
