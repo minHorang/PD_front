@@ -34,10 +34,8 @@
     width: 50%;
     gap: 10px;
 }
-.boardbutton,
-.pdbutton,
-.contestbutton{
-    width: 15%;
+.left-buttons button {
+    width: 30%;
 }
 .loginbutton,
 .mypagebutton{

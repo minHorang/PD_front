@@ -20,13 +20,13 @@ function Header() {
     navigate('/');
   };
   const handleboard = () => {
-    navigate('/board');
+    navigate('/portfolio');
   };
   const handlepd = () => {
-    navigate('/projectdesign');
+    navigate('/team');
   };
   const handlecontest = () => {
-    navigate('/contest');
+    navigate('/projectdesign');
   };
   const handlemypage = () => {
     navigate('/mypage');
@@ -37,14 +37,14 @@ function Header() {
       <img src={Logo} alt="ProjectDesign" className="header-logo" onClick={handlemain} />
       <div className="TopButtonbar">
         <div className="left-buttons">
-          <button className="boardbutton" onClick={handleboard}>
-            게시판
+          <button className="portfoliobutton" onClick={handleboard}>
+            Portfolio
           </button>
-          <button className="pdbutton" onClick={handlepd}>
+          <button className="teambutton" onClick={handlepd}>
+            Team
+          </button>
+          <button className="pdbutton" onClick={handlecontest}>
             Project Design
-          </button>
-          <button className="contestbutton" onClick={handlecontest}>
-            공모전
           </button>
         </div>
         <div className="right-buttons">

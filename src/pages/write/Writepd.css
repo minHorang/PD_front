@@ -66,6 +66,7 @@
   }
   .W-pd-field select {
     padding: 10px;
+    border-color: #ccc;
   }
   .pd-pdf-box {
     border: 1px solid #ccc;

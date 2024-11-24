@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Projectdesign.css';
-import PD from './PD/PD';
+import PDdata from './PD/PDdata';
 
 function Projectdesign() {
   const [selectedComponent, setSelectedComponent] = useState('');
@@ -12,7 +12,7 @@ function Projectdesign() {
       case 'MD':
       case 'LI':
       case 'MS':
-        return <PD selectedComponent={selectedComponent} />;
+        return <PDdata selectedComponent={selectedComponent} />;
       default:
         return null;
     }

@@ -1,0 +1,54 @@
+.team-container{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.team-topbar {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 2px solid gray;
+    border-bottom: 1px solid gray;
+}
+.team-title {
+    display: flex;
+    justify-content: center;
+    width : 60%;
+}
+.team-type {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+}
+
+.team-time {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+}
+.team-array {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height :auto;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid gray;
+}
+.team-title-content {
+    padding-left: 20px;
+    width : 60%;
+}
+.team-type-content {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+}
+
+.team-time-content {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+}

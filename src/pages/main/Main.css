@@ -8,6 +8,46 @@
 }
 
 .contestbanner {
-    width: 100%;
+    width: 90%;
     height: auto;
+}
+.mainportbutton,
+.mainteambutton,
+.mainpdbutton {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #4d8ae4;
+    width: 30%;
+    border-radius: 20px;
+}
+.mainportbutton-css,
+.mainteambutton-css,
+.mainpdbutton-css {
+    margin-top: 20px;
+    color: #4d8ae4;;
+}
+.mainportbutton-css:hover,
+.mainteambutton-css:hover,
+.mainpdbutton-css:hover {
+    text-decoration: underline;
+}
+.mainportbutton-title,
+.mainteambutton-title,
+.mainpdbutton-title {
+    font-size: large;
+    font-weight: bold;
+}
+.mainportbutton-description,
+.mainteambutton-description,
+.mainpdbutton-description {
+    margin-top: 20px;
+}
+.mainportbutton-description p,
+.mainteambutton-description p,
+.mainpdbutton-description p {
+    font-size: small;
+}
+.mainimgcontiner {
+    margin-top: 20px;
+    width:100%;
 }

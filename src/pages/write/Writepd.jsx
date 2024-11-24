@@ -10,17 +10,25 @@ function Writepd() {
   const [fields, setFields] = useState([
     { progress: '', schedule: '', isNew: false }, // 초기 필드에는 `isNew`를 false로 설정
   ]);
-
+  const [categories, setCategories] = useState([
+    { target: '', isNew: false }, // 초기 모집 대상 분류 필드
+  ]);
   const handleAddField = () => {
     setFields([...fields, { progress: '', schedule: '', isNew: true }]); // 추가된 필드는 `isNew`를 true로 설정
   };
-
+  const handleAddCategory = () => {
+    setCategories([...categories, { target: '', isNew: true }]);
+  };
   const handleFieldChange = (index, field, value) => {
     const updatedFields = [...fields];
     updatedFields[index][field] = value;
     setFields(updatedFields);
   };
-
+  const handleCategoryChange = (index, value) => {
+    const updatedCategories = [...categories];
+    updatedCategories[index].target = value;
+    setCategories(updatedCategories);
+  };
   const handleSubmit = e => {
     e.preventDefault();
     alert('모집공고가 등록되었습니다.');
@@ -49,7 +57,6 @@ function Writepd() {
                     key={index}
                   >
                     <div className="W-pd-field">
-                      {/* 초기 필드에만 label 표시 */}
                       {!field.isNew && <label htmlFor={`progress-${index}`}>모집 진행</label>}
                       <input
                         type="text"
@@ -60,7 +67,6 @@ function Writepd() {
                       />
                     </div>
                     <div className="W-pd-field">
-                      {/* 초기 필드에만 label 표시 */}
                       {!field.isNew && <label htmlFor={`schedule-${index}`}>진행 일정</label>}
                       <input
                         type="text"
@@ -73,22 +79,31 @@ function Writepd() {
                   </div>
                 ))}
                 <button type="button" className="addbutton" onClick={handleAddField}>
-                  추가하기
+                  진행 사항 추가
                 </button>
-                <div className="W-pd-row">
-                  <div className="W-pd-field">
-                    <label htmlFor="target">모집 대상 분류</label>
-                    <select id="target" name="target" defaultValue="">
-                      <option value="" disabled>
-                        선택
-                      </option>
-                      <option value="development">개발</option>
-                      <option value="media">영상/미디어</option>
-                      <option value="literature">문학</option>
-                      <option value="music">음악</option>
-                    </select>
+                {categories.map((category, index) => (
+                  <div className={`W-pd-row ${category.isNew ? 'new-field' : ''}`} key={index}>
+                    <div className="W-pd-field">
+                      {!category.isNew && <label htmlFor={`target-${index}`}>모집 대상 분류</label>}
+                      <select
+                        id={`target-${index}`}
+                        value={category.target}
+                        onChange={e => handleCategoryChange(index, e.target.value)}
+                      >
+                        <option value="" disabled>
+                          선택
+                        </option>
+                        <option value="development">개발</option>
+                        <option value="media">영상/미디어</option>
+                        <option value="literature">문학</option>
+                        <option value="music">음악</option>
+                      </select>
+                    </div>
                   </div>
-                </div>
+                ))}
+                <button type="button" className="addbutton" onClick={handleAddCategory}>
+                  모집 대상 분류 추가
+                </button>
 
                 <div className="W-pd-row">
                   <div className="W-pd-field">
