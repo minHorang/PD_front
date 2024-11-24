@@ -5,20 +5,31 @@ import './Conapply.css';
 function Conapply() {
   const navigate = useNavigate();
 
-  const [fields, setFields] = useState([
-    { progress: '', schedule: '', isNew: false }, // 초기 필드에는 `isNew`를 false로 설정
+  const [team1Fields, setTeam1Fields] = useState([
+    { progress: '', isNew: false }, // 초기 필드 상태
   ]);
 
-  const handleAddField = () => {
-    setFields([...fields, { progress: '', schedule: '', isNew: true }]); // 추가된 필드는 `isNew`를 true로 설정
+  const [team2Fields, setTeam2Fields] = useState([{ progress: '', isNew: false }]);
+
+  const handleAddFieldTeam1 = () => {
+    setTeam1Fields([...team1Fields, { progress: '', isNew: true }]);
   };
 
-  const handleFieldChange = (index, field, value) => {
-    const updatedFields = [...fields];
+  const handleAddFieldTeam2 = () => {
+    setTeam2Fields([...team2Fields, { progress: '', isNew: true }]);
+  };
+
+  const handleFieldChangeTeam1 = (index, field, value) => {
+    const updatedFields = [...team1Fields];
     updatedFields[index][field] = value;
-    setFields(updatedFields);
+    setTeam1Fields(updatedFields);
   };
 
+  const handleFieldChangeTeam2 = (index, field, value) => {
+    const updatedFields = [...team2Fields];
+    updatedFields[index][field] = value;
+    setTeam2Fields(updatedFields);
+  };
   const handleSubmit = e => {
     e.preventDefault();
     alert('지원서가 등록되었습니다.');
@@ -39,7 +50,7 @@ function Conapply() {
                   <label htmlFor="info">1팀 이름</label>
                   <input id="info" rows="5" placeholder=""></input>
                 </div>
-                {fields.map((field, index) => (
+                {team1Fields.map((field, index) => (
                   <div className={`apply-con-row ${field.isNew ? 'new-field' : ''}`} key={index}>
                     <div className="apply-con-field">
                       {/* 초기 필드에만 label 표시 */}
@@ -48,13 +59,13 @@ function Conapply() {
                         type="text"
                         id={`progress-${index}`}
                         value={field.progress}
-                        onChange={e => handleFieldChange(index, 'progress', e.target.value)}
+                        onChange={e => handleFieldChangeTeam1(index, 'progress', e.target.value)}
                         placeholder={field.isNew ? '' : ''}
                       />
                     </div>
                   </div>
                 ))}
-                <button type="button" className="addbutton" onClick={handleAddField}>
+                <button type="button" className="addbutton" onClick={handleAddFieldTeam1}>
                   추가하기
                 </button>
               </div>
@@ -63,7 +74,7 @@ function Conapply() {
                   <label htmlFor="info">2팀 이름</label>
                   <input id="info" rows="5" placeholder=""></input>
                 </div>
-                {fields.map((field, index) => (
+                {team2Fields.map((field, index) => (
                   <div className={`apply-con-row ${field.isNew ? 'new-field' : ''}`} key={index}>
                     <div className="apply-con-field">
                       {/* 초기 필드에만 label 표시 */}
@@ -72,13 +83,13 @@ function Conapply() {
                         type="text"
                         id={`progress-${index}`}
                         value={field.progress}
-                        onChange={e => handleFieldChange(index, 'progress', e.target.value)}
+                        onChange={e => handleFieldChangeTeam2(index, 'progress', e.target.value)}
                         placeholder={field.isNew ? '' : ''}
                       />
                     </div>
                   </div>
                 ))}
-                <button type="button" className="addbutton" onClick={handleAddField}>
+                <button type="button" className="addbutton" onClick={handleAddFieldTeam2}>
                   추가하기
                 </button>
               </div>

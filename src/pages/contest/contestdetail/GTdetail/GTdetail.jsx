@@ -55,7 +55,6 @@ function GTdetail() {
         <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
           <Viewer fileUrl={item.content} />
         </Worker>
-        <div className="pdpdf">{item.content}</div>
       </div>
     </div>
   );

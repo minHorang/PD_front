@@ -7,8 +7,32 @@ function Mypage() {
   const [subSelected, setSubSelected] = useState(null);
   const [finalSelected, setFinalSelected] = useState(null);
 
-  const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false); // 모달 표시 상태
+  const [postToDelete, setPostToDelete] = useState(null); // 삭제할 게시물의 인덱스
 
+  const [myPosts, setMyPosts] = useState([
+    '스터디 인원 모집합니다',
+    '프론트엔드 개발자 입니다',
+    '대회 인원 모집합니다',
+    'UX/UI 디자이너입니다',
+  ]);
+
+  const navigate = useNavigate();
+  const handleDeleteClick = index => {
+    setPostToDelete(index); // 삭제할 게시물 설정
+    setShowModal(true); // 모달 표시
+  };
+
+  const confirmDelete = () => {
+    setMyPosts(prevPosts => prevPosts.filter((_, i) => i !== postToDelete));
+    setShowModal(false); // 모달 닫기
+    setPostToDelete(null); // 초기화
+  };
+
+  const cancelDelete = () => {
+    setShowModal(false); // 모달 닫기
+    setPostToDelete(null); // 초기화
+  };
   const topCategories = ['게시판', 'Project Design', '공모전'];
   const subCategories = {
     게시판: ['개발', '영상/미디어', '문학', '음악'],
@@ -113,12 +137,6 @@ function Mypage() {
   };
   const user = {
     nickname: '홍길동',
-    myPosts: [
-      '스터디 인원 모집합니다',
-      '프론트엔드 개발자 입니다',
-      '대회 인원 모집합니다',
-      'UX/UI 디자이너입니다',
-    ],
     appliedPosts: [
       '백엔드 개발자 입니다',
       '대회 멤버 모집합니다',
@@ -138,12 +156,31 @@ function Mypage() {
         <div className="mypage-section">
           <h3 className="section-title">내가 쓴 글</h3>
           <ul className="content-list">
-            {user.myPosts.map((post, index) => (
-              <li key={index}>{post || <span>&nbsp;</span>}</li>
+            {myPosts.map((post, index) => (
+              <li key={index}>
+                {post || <span>&nbsp;</span>}
+                <button className="delete-button" onClick={() => handleDeleteClick(index)}>
+                  삭제
+                </button>
+              </li>
             ))}
           </ul>
         </div>
-
+        {showModal && (
+          <div className="modal-overlay">
+            <div className="modal">
+              <p>삭제하시겠습니까?</p>
+              <div className="modal-buttons">
+                <button className="confirm-button" onClick={confirmDelete}>
+                  확인
+                </button>
+                <button className="cancel-button" onClick={cancelDelete}>
+                  취소
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
         <div className="mypage-section">
           <h3 className="section-title">지원/제의한 글</h3>
           <ul className="content-list">

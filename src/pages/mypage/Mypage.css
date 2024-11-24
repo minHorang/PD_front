@@ -52,9 +52,26 @@
   }
   
   .content-list li {
-    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
     border-bottom: 1px solid #ddd;
     color: #333;
+  }
+  .delete-button {
+    font-size: x-small;
+    margin-left: 10px;
+    padding: 3px 5px;
+    color: #4d8ae4;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    text-decoration: underline;
   }
   
   .mypage-write {
@@ -114,5 +131,57 @@
     padding: 0;
     display: flex;
     flex-direction: column;
+  }
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .confirm-button,
+  .cancel-button {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .confirm-button {
+    background-color: #4d8ae4;
+    color: white;
+  }
+  
+  .cancel-button {
+    background-color: #cbcbcb;
+  }
+  
+  .confirm-button:hover {
+    text-decoration: underline;
+  }
+  
+  .cancel-button:hover {
+    text-decoration: underline;
   }
   

@@ -6,7 +6,7 @@ import sample from '../../../../assets/sample.pdf';
 const data = [
   {
     id: 1,
-    title: '스터디 인원 모집합니다',
+    title: '문학 팀 모집',
     selectedComponent: 'LIXMS',
     selecttype: 'LI',
     who: '문학',
@@ -23,7 +23,7 @@ const data = [
   },
   {
     id: 2,
-    title: '백엔드 개발자 구합니다',
+    title: '영상/미디어 팀 모집',
     selectedComponent: 'MDXLI',
     selecttype: 'MD',
     who: '영상/미디어',
@@ -40,7 +40,7 @@ const data = [
   },
   {
     id: 3,
-    title: '프론트엔드 스터디 모집',
+    title: '개발 팀 모집',
     selectedComponent: 'ITXMD',
     selecttype: 'IT',
     who: '개발',
@@ -57,7 +57,7 @@ const data = [
   },
   {
     id: 4,
-    title: '귀카피 가능 자 모집',
+    title: '음악 팀 모집',
     selectedComponent: 'ITXMS',
     selecttype: 'MS',
     who: '음악',

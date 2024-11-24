@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 import './Writerecr.css';
 
 function Writerecr() {
-  const { top, sub, final } = useParams();
+  //const { top, sub, final } = useParams();
   const navigate = useNavigate();
 
   const [fields, setFields] = useState([
@@ -28,13 +29,6 @@ function Writerecr() {
 
   return (
     <div>
-      <div>
-        <p>
-          {top}
-          {sub}
-          {final}
-        </p>
-      </div>
       <div className="W-recr-container">
         <div className="W-recr-toptitle">
           <p>모집공고를 작성해주세요</p>
@@ -43,6 +37,12 @@ function Writerecr() {
           <form className="W-recr-form" onSubmit={handleSubmit}>
             <div className="layout-LR">
               <div className="left">
+                <div className="W-recr-row">
+                  <div className="W-recr-field">
+                    <label htmlFor="title">글 제목</label>
+                    <input type="text" id="title" placeholder="" />
+                  </div>
+                </div>
                 {fields.map((field, index) => (
                   <div
                     className={`W-recr-row ${field.isNew ? 'new-field' : ''}`} // `isNew`에 따라 클래스 추가

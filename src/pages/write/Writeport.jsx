@@ -1,9 +1,10 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 import './Writeport.css';
 
 function Writeport() {
-  const { top, sub, final } = useParams();
+  //const { top, sub, final } = useParams();
   const navigate = useNavigate();
 
   const handleSubmit = () => {
@@ -11,13 +12,6 @@ function Writeport() {
   };
   return (
     <div>
-      <div>
-        <p>
-          {top}
-          {sub}
-          {final}
-        </p>
-      </div>
       <div className="W-port-container">
         <div className="W-port-toptitle">
           <p>포트폴리오를 작성해주세요</p>

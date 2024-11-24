@@ -16,7 +16,7 @@ function GTapply() {
         </div>
         <form className="apply-GT-form" onSubmit={handleSubmit}>
           <div className="apply-GT-field">
-            <label htmlFor="title">팀 자기소개서</label>
+            <label htmlFor="title">팀 소개서</label>
             <textarea type="text" id="title" placeholder="" />
           </div>
           <div className="apply-GT-field">
