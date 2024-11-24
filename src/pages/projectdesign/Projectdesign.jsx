@@ -26,7 +26,7 @@ function Projectdesign() {
   return (
     <div className="pdcontainer">
       <div className="sidebar">
-        <h1>게시판</h1>
+        <h1>Project Design</h1>
         <div className="sidebutton">
           <button
             className={activeButton === 'IT' ? 'active' : ''}
