@@ -19,12 +19,6 @@ function PDapply() {
             <label htmlFor="title">팀 소개서</label>
             <textarea type="text" id="title" placeholder="" />
           </div>
-          <div className="apply-PD-field">
-            <div className="apply-PD-field apply-PD-pdf-box">
-              <label htmlFor="portfolio">팀 포트폴리오 PDF</label>
-              <input type="file" id="portfolio" accept="application/pdf" />
-            </div>
-          </div>
           <button type="submit" className="apply-PD-submit">
             등록하기
           </button>

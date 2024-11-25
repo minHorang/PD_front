@@ -1,8 +1,6 @@
 import React from 'react';
-import { Worker, Viewer } from '@react-pdf-viewer/core';
 import { useParams, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import '@react-pdf-viewer/core/lib/styles/index.css';
 import './Recrdetail.css';
 
 function Recrdetail() {
@@ -56,12 +54,6 @@ function Recrdetail() {
         <div className="recrbutton">
           <button onClick={handlerecrapply}>프로젝트 지원하기</button>
         </div>
-      </div>
-      <div className="recrdetail-container">
-        <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
-          <Viewer fileUrl={item.content} />
-        </Worker>
-        <div className="recrpdf">{item.content}</div>
       </div>
     </div>
   );

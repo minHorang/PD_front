@@ -1,8 +1,6 @@
 import React from 'react';
-import { Worker, Viewer } from '@react-pdf-viewer/core';
 import { useParams, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import '@react-pdf-viewer/core/lib/styles/index.css';
 import './PDdetail.css';
 
 function PDdetail() {
@@ -50,12 +48,6 @@ function PDdetail() {
         <div className="pdbutton">
           <button onClick={handleapply}>협업 지원하기</button>
         </div>
-      </div>
-      <div className="pddetail-container">
-        <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
-          <Viewer fileUrl={item.content} />
-        </Worker>
-        <div className="pdpdf">{item.content}</div>
       </div>
     </div>
   );

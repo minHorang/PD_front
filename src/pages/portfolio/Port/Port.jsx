@@ -1,7 +1,6 @@
 import React from 'react';
 import './Port.css';
 import { useNavigate } from 'react-router-dom';
-import sample from '../../../assets/sample.pdf';
 
 const data = [
   {
@@ -11,7 +10,7 @@ const data = [
     selecttype: 'Port',
     type: '스터디',
     time: '상시 가능',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 2,
@@ -20,7 +19,7 @@ const data = [
     selecttype: 'Port',
     type: '프로젝트',
     time: '2024.11.15 ~ 2024.12.30',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 3,
@@ -29,7 +28,7 @@ const data = [
     selecttype: 'Port',
     type: '팀 프로젝트',
     time: '2025.01.01 ~ 2025.03.01',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 4,
@@ -38,7 +37,7 @@ const data = [
     selecttype: 'Port',
     type: '스터디',
     time: '상시 가능',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 5,
@@ -47,7 +46,7 @@ const data = [
     selecttype: 'Port',
     type: '스타트업',
     time: '2024.11.15 ~ 2024.12.20',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 6,
@@ -56,7 +55,7 @@ const data = [
     selecttype: 'Port',
     type: '협업 프로젝트',
     time: '2025.01.01 ~ 2025.03.15',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 7,
@@ -65,7 +64,7 @@ const data = [
     selecttype: 'Port',
     type: '스타트업',
     time: '상시 가능',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 8,
@@ -74,7 +73,7 @@ const data = [
     selecttype: 'Port',
     type: '면접 스터디',
     time: '2024.12.01 ~ 2025.01.01',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 9,
@@ -83,7 +82,7 @@ const data = [
     selecttype: 'Port',
     type: '팀 프로젝트',
     time: '2024.11.20 ~ 2024.12.31',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 10,
@@ -92,7 +91,7 @@ const data = [
     selecttype: 'Port',
     type: '스터디',
     time: '상시 가능',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 11,
@@ -101,7 +100,7 @@ const data = [
     selecttype: 'Port',
     type: '프로젝트',
     time: '2025.01.10 ~ 2025.03.10',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 12,
@@ -110,7 +109,7 @@ const data = [
     selecttype: 'Port',
     type: '스터디',
     time: '상시 가능',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 13,
@@ -119,7 +118,7 @@ const data = [
     selecttype: 'Port',
     type: '스터디',
     time: '2024.11.15 ~ 2024.12.20',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 14,
@@ -128,7 +127,7 @@ const data = [
     selecttype: 'Port',
     type: '팀 프로젝트',
     time: '2025.01.05 ~ 2025.02.28',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 15,
@@ -137,7 +136,7 @@ const data = [
     selecttype: 'Port',
     type: '스터디',
     time: '상시 가능',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 16,
@@ -146,7 +145,7 @@ const data = [
     selecttype: 'Port',
     type: '스터디',
     time: '2024.12.01 ~ 2024.12.30',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 17,
@@ -155,7 +154,7 @@ const data = [
     selecttype: 'Port',
     type: '프로젝트',
     time: '2025.02.01 ~ 2025.04.01',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 18,
@@ -164,7 +163,7 @@ const data = [
     selecttype: 'Port',
     type: '스터디',
     time: '상시 가능',
-    content: sample || '',
+    content: '자기소개서',
   },
   {
     id: 19,
@@ -173,7 +172,7 @@ const data = [
     selecttype: 'Port',
     type: '팀 프로젝트',
     time: '2024.12.01 ~ 2025.01.15',
-    content: sample || '',
+    content: '자기소개서',
   },
 ];
 

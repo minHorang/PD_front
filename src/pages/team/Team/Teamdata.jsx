@@ -1,7 +1,6 @@
 import React from 'react';
 import './Teamdata.css';
 import { useNavigate } from 'react-router-dom';
-import sample from '../../../assets/sample.pdf';
 
 const data = [
   {
@@ -12,8 +11,7 @@ const data = [
     selecttype: 'Recr',
     type: '스타트업',
     time: '2024.10.1 ~ 2025.1.15',
-    content: sample || '',
-    textcontent: '자세한 사항을 아래 PDF를 참조해주세요.',
+    textcontent: '모집 정보',
     process: [
       { step: '모집', date: '24.10.1 ~ 24.10.31' },
       { step: '서류 심사', date: '24.11.1 ~ 24.12.31' },
@@ -29,8 +27,7 @@ const data = [
     selecttype: 'Recr',
     type: '대회',
     time: '2024.12.01 ~ 2025.01.01',
-    content: sample || '',
-    textcontent: '대회 정보',
+    textcontent: '모집 정보',
     process: [
       { step: '모집', date: '24.10.1 ~ 24.10.31' },
       { step: '진행', date: '24.11.1 ~ 24.12.31' },
@@ -46,8 +43,7 @@ const data = [
     selecttype: 'Recr',
     type: '공모전',
     time: '2024.12.01 ~ 2025.01.01',
-    content: sample || '',
-    textcontent: '미디어 아트 작품 공모',
+    textcontent: '모집 정보',
     process: [
       { step: '모집', date: '24.10.1 ~ 24.10.31' },
       { step: '진행', date: '24.11.1 ~ 24.12.31' },
@@ -63,8 +59,7 @@ const data = [
     selecttype: 'Recr',
     type: '프로젝트',
     time: '2024.12.01 ~ 2025.01.01',
-    content: sample || '',
-    textcontent: '다큐멘터리 제작 및 발표',
+    textcontent: '모집 정보',
     process: [
       { step: '모집', date: '24.10.1 ~ 24.10.31' },
       { step: '진행', date: '24.11.1 ~ 24.12.31' },
@@ -80,7 +75,6 @@ const data = [
     selecttype: 'Recr',
     type: '프로젝트',
     time: '2024.12.01 ~ 2025.01.01',
-    content: sample || '',
     textcontent: '스터디 커리큘럼',
     process: [
       { step: '모집', date: '24.10.1 ~ 24.10.31' },
@@ -97,7 +91,6 @@ const data = [
     selecttype: 'Recr',
     type: '스터디',
     time: '2024.12.01 ~ 2025.02.01',
-    content: sample || '',
     textcontent: '창작 문학 워크숍',
     process: [
       { step: '모집', date: '24.10.15 ~ 24.11.15' },
@@ -114,7 +107,6 @@ const data = [
     selecttype: 'Recr',
     type: '세미나',
     time: '2024.11.20 ~ 2025.01.20',
-    content: sample || '',
     textcontent: '현대 문학 비평과 논의',
     process: [
       { step: '모집', date: '24.10.1 ~ 24.10.31' },
@@ -131,7 +123,6 @@ const data = [
     selecttype: 'Recr',
     type: '프로젝트',
     time: '2024.12.01 ~ 2025.03.01',
-    content: sample || '',
     textcontent: '음악 제작 및 발표',
     process: [
       { step: '모집', date: '24.10.20 ~ 24.11.20' },
@@ -148,7 +139,6 @@ const data = [
     selecttype: 'Recr',
     type: '소모임',
     time: '2024.11.15 ~ 2025.01.15',
-    content: sample || '',
     textcontent: '밴드 커버 연습 및 공연',
     process: [
       { step: '모집', date: '24.10.15 ~ 24.11.10' },
@@ -165,7 +155,6 @@ const data = [
     selecttype: 'Recr',
     type: '스터디',
     time: '2024.12.01 ~ 2025.02.01',
-    content: sample || '',
     textcontent: '작곡 기본부터 실습까지',
     process: [
       { step: '모집', date: '24.10.25 ~ 24.11.25' },

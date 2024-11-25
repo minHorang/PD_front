@@ -6,7 +6,6 @@ function Portapply() {
   const navigate = useNavigate();
 
   const [teamIntro, setTeamIntro] = useState(''); // 팀 소개
-  const [portfolioFile, setPortfolioFile] = useState(null); // 포트폴리오 파일
   const myPosts = [
     '스터디 인원 모집합니다',
     '프론트엔드 개발자 입니다',
@@ -21,22 +20,10 @@ function Portapply() {
       return;
     }
 
-    if (!portfolioFile) {
-      alert('팀 포트폴리오 PDF를 업로드해주세요.');
-      return;
-    }
-
     alert('제의서 등록 완료');
     navigate('/mypage');
   };
-  const handleFileChange = event => {
-    const file = event.target.files[0];
-    if (file && file.type !== 'application/pdf') {
-      alert('PDF 파일만 업로드 가능합니다.');
-      return;
-    }
-    setPortfolioFile(file);
-  };
+
   return (
     <div>
       <div className="apply-port-container">
@@ -56,17 +43,6 @@ function Portapply() {
                 </option>
               ))}
             </select>
-          </div>
-          <div className="apply-port-field">
-            <div className="apply-port-field apply-port-pdf-box">
-              <label htmlFor="portfolio">팀 포트폴리오 PDF</label>
-              <input
-                type="file"
-                id="portfolio"
-                accept="application/pdf"
-                onChange={handleFileChange}
-              />
-            </div>
           </div>
           <button type="submit" className="apply-port-submit">
             등록하기

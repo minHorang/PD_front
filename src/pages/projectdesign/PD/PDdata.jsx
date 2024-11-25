@@ -1,7 +1,6 @@
 import React from 'react';
 import './PDdata.css';
 import { useNavigate } from 'react-router-dom';
-import sample from '../../../assets/sample.pdf';
 
 const data = [
   {
@@ -11,7 +10,6 @@ const data = [
     who: '문학',
     type: '대회',
     time: '2024.11.20 ~ 2024.12.18',
-    content: sample || '',
     textcontent: '대회 준비 및 팀 구성 관련 정보',
     process: [
       { step: '모집', date: '24.10.1 ~ 24.10.31' },
@@ -27,7 +25,6 @@ const data = [
     who: '영상/미디어',
     type: '공모전',
     time: '2024.12.01 ~ 2025.01.01',
-    content: sample || '',
     textcontent: '백엔드 기술 심화 스터디 정보',
     process: [
       { step: '모집', date: '24.10.1 ~ 24.10.31' },
@@ -43,7 +40,6 @@ const data = [
     who: '개발',
     type: '스터디',
     time: '상시 가능',
-    content: sample || '',
     textcontent: '프론트엔드 심화 학습',
     process: [
       { step: '모집', date: '상시' },
@@ -57,7 +53,6 @@ const data = [
     who: '음악',
     type: '스타트업',
     time: '2024.11.15 ~ 2024.12.20',
-    content: sample || '',
     textcontent: '음악 프로젝트 협업 정보',
     process: [
       { step: '모집', date: '24.10.1 ~ 24.10.31' },
@@ -71,7 +66,6 @@ const data = [
     who: '개발, 영상/미디어',
     type: '스타트업',
     time: '2024.12.10 ~ 2025.01.10',
-    content: sample || '',
     textcontent: 'UI/UX 디자인 협업 프로젝트입니다. 자세한 내용은 아래 PDF를 참고해주세요',
     process: [
       { step: '모집', date: '24.10.1 ~ 24.10.31' },
@@ -87,7 +81,6 @@ const data = [
     who: '개발',
     type: '협업 프로젝트',
     time: '2024.12.01 ~ 2025.02.28',
-    content: sample || '',
     textcontent: '웹 개발 프로젝트 정보',
     process: [
       { step: '모집', date: '24.10.15 ~ 24.11.15' },
@@ -101,7 +94,6 @@ const data = [
     who: '영상/미디어',
     type: '팀 프로젝트',
     time: '2024.11.01 ~ 2025.01.31',
-    content: sample || '',
     textcontent: '미디어 콘텐츠 제작 프로젝트 정보',
     process: [
       { step: '아이디어 제출', date: '24.11.1 ~ 24.11.15' },
@@ -115,7 +107,6 @@ const data = [
     who: '문학',
     type: '스터디',
     time: '2024.12.01 ~ 2025.01.01',
-    content: sample || '',
     textcontent: '문학 작품 비평 스터디 정보',
     process: [
       { step: '모집', date: '24.11.15 ~ 24.11.30' },
@@ -129,7 +120,6 @@ const data = [
     who: '음악/미디어',
     type: '스타트업',
     time: '2024.12.15 ~ 2025.02.15',
-    content: sample || '',
     textcontent: '마케팅 전략 수립 및 실행 정보',
     process: [
       { step: '모집', date: '24.12.1 ~ 24.12.14' },
@@ -143,7 +133,6 @@ const data = [
     who: '개발/미디어',
     type: '팀 프로젝트',
     time: '2025.01.01 ~ 2025.03.31',
-    content: sample || '',
     textcontent: 'AI 기술을 활용한 앱 개발 프로젝트',
     process: [
       { step: '모집', date: '24.12.1 ~ 24.12.31' },
