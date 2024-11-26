@@ -28,6 +28,11 @@
     margin-bottom: 5px;
     color: #333;
   }
+  .W-port-field textarea {
+    min-height: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
   
   .W-port-field input[type="text"] {
     height: 40px;

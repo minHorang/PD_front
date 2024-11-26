@@ -96,12 +96,6 @@ function Writerecr() {
               </div>
               <div className="right">
                 <div className="W-recr-row">
-                  <div className="W-recr-field recr-pdf-box">
-                    <label htmlFor="attachment">PDF 첨부</label>
-                    <input type="file" id="attachment" accept="application/pdf" />
-                  </div>
-                </div>
-                <div className="W-recr-row">
                   <div className="W-recr-field">
                     <label htmlFor="info">모집 정보</label>
                     <textarea id="info" rows="5" placeholder=""></textarea>

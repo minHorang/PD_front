@@ -30,10 +30,8 @@ function Writeport() {
             <input type="text" id="duration" placeholder="ex. 상시 가능, 2024.11.20~2024.12.18" />
           </div>
           <div className="W-port-field">
-            <div className="W-port-field port-pdf-box">
-              <label htmlFor="portfolio">포트폴리오 PDF</label>
-              <input type="file" id="portfolio" accept="application/pdf" />
-            </div>
+            <label htmlFor="portfolio">포트폴리오</label>
+            <textarea type="text" id="portfolio" placeholder="포트폴리오 내용" />
           </div>
           <button type="submit" className="W-port-submit">
             등록하기

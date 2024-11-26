@@ -120,12 +120,6 @@ function Writepd() {
               </div>
               <div className="right">
                 <div className="W-pd-row">
-                  <div className="W-pd-field pd-pdf-box">
-                    <label htmlFor="attachment">PDF 첨부</label>
-                    <input type="file" id="attachment" accept="application/pdf" />
-                  </div>
-                </div>
-                <div className="W-pd-row">
                   <div className="W-pd-field">
                     <label htmlFor="info">진행할 프로젝트 정보</label>
                     <textarea id="info" rows="5" placeholder=""></textarea>
