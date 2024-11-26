@@ -66,7 +66,7 @@ const data = [
     who: '개발, 영상/미디어',
     type: '스타트업',
     time: '2024.12.10 ~ 2025.01.10',
-    textcontent: 'UI/UX 디자인 협업 프로젝트입니다. 자세한 내용은 아래 PDF를 참고해주세요',
+    textcontent: 'UI/UX 디자인 협업 프로젝트입니다.',
     process: [
       { step: '모집', date: '24.10.1 ~ 24.10.31' },
       { step: '서류 심사', date: '24.11.1 ~ 24.12.31' },

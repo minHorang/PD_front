@@ -10,10 +10,11 @@
     font-size: large;
     margin-bottom: 30px;
 }
-.portpdf {
-    display: flex;
-    justify-content: center;
-}
+.portfolio-content {
+    white-space: pre-line; /* 줄바꿈과 공백 유지 */
+    line-height: 1.5; /* 줄 간격 설정 */
+  }
+  
 .portbutton {
     width: 90%;
     margin: 50px;

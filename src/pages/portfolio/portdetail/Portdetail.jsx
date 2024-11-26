@@ -34,7 +34,7 @@ function Portdetail() {
         <div className="Pddetailtoptitle">
           <p>{item.title}</p>
         </div>
-        <div className="portpdf">{item.content}</div>
+        <div className="portfolio-content" dangerouslySetInnerHTML={{ __html: item.content }}></div>
         <div className="portbutton">
           <button onClick={() => handleportapply(item)}>프로젝트 제의하기</button>
         </div>

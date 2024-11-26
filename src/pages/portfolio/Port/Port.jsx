@@ -28,7 +28,43 @@ const data = [
     selecttype: 'Port',
     type: '팀 프로젝트',
     time: '2025.01.01 ~ 2025.03.01',
-    content: '자기소개서',
+    content: `
+  안녕하세요, 저는 현재 웹 개발 및 프로젝트 매니지먼트에 관심을 가지고 다양한 프로젝트를 진행 중인 개발자입니다. 이번에 풀스택 개발자와 협업하여 창의적이고 도전적인 프로젝트를 진행하고자 이렇게 글을 작성하게 되었습니다.<br/><br/>
+  
+  <strong>프로젝트 주제</strong><br/>
+  - <strong>목표:</strong> 사용자 친화적이고 실질적인 문제를 해결할 수 있는 웹 애플리케이션 개발<br/>
+  - <strong>분야:</strong> 소셜 플랫폼, 생산성 도구, 데이터 시각화 등<br/>
+  - <strong>기술 스택:</strong> React, Node.js, Express, MongoDB (협의 가능)<br/><br/>
+  
+  <strong>저에 대해</strong><br/>
+  - <strong>주요 역할:</strong> 프론트엔드 개발 (UI/UX 디자인 포함) 및 프로젝트 기획<br/>
+  - <strong>경험:</strong><br/>
+    &nbsp;&nbsp;- React 및 TypeScript 기반으로 개인 프로젝트 진행<br/>
+    &nbsp;&nbsp;- 협업 프로젝트에서 Git 및 Agile 방식 활용 경험<br/>
+    &nbsp;&nbsp;- 간단한 백엔드 API 연동 및 데이터베이스 설계 가능<br/><br/>
+  
+  <strong>원하는 협업 대상</strong><br/>
+  - <strong>풀스택 개발자</strong><br/>
+    &nbsp;&nbsp;- 프론트엔드와 백엔드 모두의 개발 경험이 있는 분<br/>
+    &nbsp;&nbsp;- 코드 리뷰 및 기술 스택 선정에 적극적으로 참여해 주실 분<br/>
+    &nbsp;&nbsp;- 팀워크를 중요시하고, 새로운 도전을 즐기는 분<br/><br/>
+  
+  <strong>진행 방식</strong><br/>
+  - <strong>협업 도구:</strong> GitHub, Slack/Discord, Notion<br/>
+  - <strong>작업 일정:</strong> 2024년 12월 ~ 2025년 2월 (협의 가능)<br/>
+  - <strong>미팅 방식:</strong> 주 1회 온라인 회의 및 일일 커뮤니케이션 (유연 조정 가능)<br/><br/>
+  
+  <strong>기대 효과</strong><br/>
+  - 서로의 강점을 살려, 현실적이고 사용자들에게 유용한 제품을 개발할 수 있는 기회<br/>
+  - 다양한 문제를 해결하며 새로운 기술과 트렌드를 학습<br/>
+  - 프로젝트를 완성하고, 포트폴리오로 활용 가능<br/><br/>
+  
+  <strong>연락처</strong><br/>
+  - <strong>이메일:</strong> example@email.com<br/>
+  - <strong>Slack ID:</strong> @example<br/><br/>
+  
+  저는 개발과 기획을 함께 할 수 있는 풀스택 개발자와 함께 열정적으로 이 프로젝트를 성공적으로 이끌어가고 싶습니다. 관심 있으신 분들은 부담 없이 연락 부탁드립니다. 감사합니다!
+`,
   },
   {
     id: 4,
