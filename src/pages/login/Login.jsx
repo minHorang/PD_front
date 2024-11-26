@@ -9,23 +9,12 @@ function Login({ isOpen, onClose }) {
   const [email, setEmail] = useState('');
   const [loginusername, setloginUsername] = useState('');
   const [loginpassword, setloginPassword] = useState('');
-  const [portfolioUrl, setPortfolioUrl] = useState('');
   const [isRegisterMode, setIsRegisterMode] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
   const existingNicknames = ['user1', 'testUser', 'example'];
 
   if (!isOpen) return null;
-
-  const handlePortfolioUpload = e => {
-    const file = e.target.files[0];
-    if (file && file.type === 'application/pdf') {
-      const fileUrl = URL.createObjectURL(file);
-      setPortfolioUrl(fileUrl);
-    } else {
-      alert('PDF 파일만 업로드할 수 있습니다.');
-    }
-  };
 
   const handleNicknameChange = e => {
     const nicknameValue = e.target.value;
@@ -95,26 +84,6 @@ function Login({ isOpen, onClose }) {
                 onChange={e => setEmail(e.target.value)}
                 placeholder="이메일"
               />
-              <div className="portfolio-upload-wrapper">
-                <div className="portfolio-upload">
-                  <p htmlFor="portfolio-input">포트폴리오(PDF)</p>
-                  <div className="porturl">
-                    <input
-                      id="portfolio-input"
-                      type="file"
-                      accept="application/pdf"
-                      onChange={handlePortfolioUpload}
-                    />
-                    {portfolioUrl && (
-                      <p>
-                        <a href={portfolioUrl} target="_blank" rel="noopener noreferrer">
-                          열기
-                        </a>
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
               {errorMessage && (
                 <div className="join-error-box">
                   <div className="join-error">

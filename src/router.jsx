@@ -13,6 +13,7 @@ import PDdetail from './pages/projectdesign/PDdetail/PDdetail';
 import DynamicWrite from './pages/write/DynamicWrite';
 import Portapply from './pages/portfolio/portdetail/Portapply';
 import Recrapply from './pages/team/Teamdetail/Recrapply';
+import Teampage from './pages/mypage/Teampage';
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: 'mypage',
         element: <Mypage />,
+      },
+      {
+        path: 'mypage/team/:id',
+        element: <Teampage />,
       },
       {
         path: ':top/:sub',

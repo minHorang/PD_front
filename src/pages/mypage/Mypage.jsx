@@ -7,12 +7,14 @@ function Mypage() {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [postToDelete, setPostToDelete] = useState(null);
+
   const topCategories = ['Portfolio', 'Team', 'Project Design'];
   const subCategories = {
     Portfolio: ['개발', '영상/미디어', '문학', '음악'],
     Team: ['개발', '영상/미디어', '문학', '음악'],
     'Project Design': ['개발', '영상/미디어', '문학', '음악'],
   };
+
   const [myPosts, setMyPosts] = useState([
     '스터디 인원 모집합니다',
     '프론트엔드 개발자 입니다',
@@ -41,6 +43,50 @@ function Mypage() {
     }
   };
 
+  const team = {
+    nickname: '홍길동',
+    teamname: [
+      {
+        id: 1,
+        title: '밴드 음악 커버',
+        members: [
+          { name: 'vocal', role: '보컬', email: 'vocal@gmail.com' },
+          { name: 'junY', role: '기타', email: 'junY@naver.com' },
+          { name: 'parkseo', role: '베이스', email: 'parkseo@gmail.com' },
+          { name: 'Cho99', role: '드럼', email: 'Cho99@gmail.com' },
+          { name: 'min1204', role: '키보드', email: 'min1204@naver.com' },
+        ],
+        schedule: [
+          { task: '공연 곡, 날짜 회의', date: '6/25' },
+          { task: '세션 담당 지정', date: '6/29' },
+          { task: '합주', date: '6/30~8/25' },
+          { task: '리허설', date: '8/10, 8/17, 8/24' },
+          { task: '공연', date: '8/26' },
+        ],
+      },
+      {
+        id: 2,
+        title: '2024 대회 4팀',
+        members: [
+          { name: 'vocal', role: '보컬', email: 'vocal@gmail.com' },
+          { name: 'junY', role: '기타', email: 'junY@naver.com' },
+          { name: 'parkseo', role: '베이스', email: 'parkseo@gmail.com' },
+          { name: 'Cho99', role: '드럼', email: 'Cho99@gmail.com' },
+          { name: 'min1204', role: '키보드', email: 'min1204@naver.com' },
+        ],
+        schedule: [
+          { task: '공연 곡, 날짜 회의', date: '6/25' },
+          { task: '세션 담당 지정', date: '6/29' },
+          { task: '합주', date: '6/30~8/25' },
+          { task: '리허설', date: '8/10, 8/17, 8/24' },
+          { task: '공연', date: '8/26' },
+        ],
+      },
+    ],
+  };
+  const handleTeamClick = team => {
+    navigate(`/mypage/team/${team.id}`, { state: team });
+  };
   const user = {
     nickname: '홍길동',
     appliedPosts: [
@@ -73,26 +119,46 @@ function Mypage() {
         <p className="mypage-username">{user.nickname}</p>
       </div>
       <div className="mypage-content">
-        <div className="mypage-section">
-          <h3 className="section-title">내가 쓴 글</h3>
-          <ul className="content-list">
-            {myPosts.map((post, index) => (
-              <li key={index}>
-                <span>{post || <span>&nbsp;</span>}</span>
-                <button className="delete-button" onClick={() => handleDeleteClick(index)}>
-                  삭제
-                </button>
-              </li>
-            ))}
-          </ul>
+        <div className="mypage-top">
+          <div className="mypage-section">
+            <h3 className="section-title">내가 속한 팀</h3>
+            <ul className="content-list">
+              {team.teamname && team.teamname.length > 0 ? (
+                team.teamname.map((post, index) => (
+                  <li key={index}>
+                    <button className="team-link" onClick={() => handleTeamClick(post)}>
+                      {post.title || <span>&nbsp;</span>}
+                    </button>
+                  </li>
+                ))
+              ) : (
+                <p>속한 팀이 없습니다.</p>
+              )}
+            </ul>
+          </div>
         </div>
-        <div className="mypage-section">
-          <h3 className="section-title">지원/제의한 글</h3>
-          <ul className="content-list">
-            {user.appliedPosts.map((post, index) => (
-              <li key={index}>{post || <span>&nbsp;</span>}</li>
-            ))}
-          </ul>
+        <div className="mypage-bottom">
+          <div className="mypage-section">
+            <h3 className="section-title">내가 쓴 글</h3>
+            <ul className="content-list">
+              {myPosts.map((post, index) => (
+                <li key={index}>
+                  <span>{post || <span>&nbsp;</span>}</span>
+                  <button className="delete-button" onClick={() => handleDeleteClick(index)}>
+                    삭제
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="mypage-section">
+            <h3 className="section-title">지원/제의한 글</h3>
+            <ul className="content-list">
+              {user.appliedPosts.map((post, index) => (
+                <li key={index}>{post || <span>&nbsp;</span>}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       {showModal && (
