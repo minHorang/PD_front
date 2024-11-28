@@ -30,17 +30,7 @@ function Recrdetail() {
         </div>
         <p className="recrprocessfontsize">모집 진행</p>
         <div className="recrprocess">
-          {item.process.map((step, index) => (
-            <React.Fragment key={index}>
-              <div className="recrprocessstep">
-                <div className="recrprocessstep-content">
-                  <p>{step.step}</p>
-                  <p>{step.date}</p>
-                </div>
-              </div>
-              {index < item.process.length - 1 && <div className="CTarrow">→</div>}
-            </React.Fragment>
-          ))}
+          <p>{item.process}</p>
         </div>
         <p className="recrparticipationfontsize">모집 대상</p>
         <div className="recrparticipation">

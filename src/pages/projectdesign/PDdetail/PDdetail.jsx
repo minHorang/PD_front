@@ -24,17 +24,7 @@ function PDdetail() {
         </div>
         <p className="pdprocessfontsize">모집 진행</p>
         <div className="pdprocess">
-          {item.process.map((step, index) => (
-            <React.Fragment key={index}>
-              <div className="pdprocessstep">
-                <div className="pdprocessstep-content">
-                  <p>{step.step}</p>
-                  <p>{step.date}</p>
-                </div>
-              </div>
-              {index < item.process.length - 1 && <div className="CTarrow">→</div>}
-            </React.Fragment>
-          ))}
+          <p>{item.process}</p>
         </div>
         <p className="pdparticipationfontsize">모집 대상</p>
         <div className="pdparticipation">
