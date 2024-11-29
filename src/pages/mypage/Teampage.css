@@ -11,11 +11,19 @@ body {
     width: 80%;
     border-bottom: 1px solid gray;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
-  .teamname-title {
-    width: 80%;
-    border-bottom: 1px solid gray;
-    margin: 0 auto;
+  .teamname-title button {
+    border: none;
+  }
+  .teamname-title button:hover {
+    border: none;
+  }
+  .alarmimg {
+    max-width: 20px;
+    max-height: 20px;
   }
   .teamname-title p {
     padding: 20px;

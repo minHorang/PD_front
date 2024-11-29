@@ -1,37 +1,80 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './Teampage.css';
+import alarm from '../../img/alarm.png';
+import AlarmModal from './AlarmModal';
 
 function Teampage() {
   const location = useLocation();
-  const [team, setTeam] = useState(location.state || { title: '', members: [], schedule: [] }); // 초기값 설정
-
+  const [team, setTeam] = useState(location.state || { title: '', members: [], schedule: [] });
+  const [notifications, setNotifications] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [showMemberModal, setShowMemberModal] = useState(false);
   const [showScheduleModal, setShowScheduleModal] = useState(false);
+  const [showNotificationModal, setShowNotificationModal] = useState(false);
   const [newMember, setNewMember] = useState({ name: '', role: '', email: '' });
   const [newSchedule, setNewSchedule] = useState({ task: '', date: '' });
+
+  const baseURL = 'http://localhost:4000';
+
+  useEffect(() => {
+    const fetchNotifications = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(`${baseURL}/notifications`);
+        const result = await response.json();
+
+        if (result.isSuccess) {
+          setNotifications(result.result.notifications || []);
+        } else {
+          setError('알림 데이터를 가져오는데 실패했습니다.');
+        }
+      } catch (error) {
+        setError('네트워크 오류가 발생했습니다.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchNotifications();
+  }, []);
+
+  const handleRemoveNotification = index => {
+    setNotifications(prev => prev.filter((_, i) => i !== index));
+  };
 
   const closeModal = () => {
     setShowMemberModal(false);
     setShowScheduleModal(false);
+    setShowNotificationModal(false);
   };
+
   const handleAddMember = () => {
+    if (!newMember.name || !newMember.role || !newMember.email)
+      return alert('모든 필드를 입력해주세요.');
+
     setTeam(prevTeam => ({
       ...prevTeam,
       members: [...prevTeam.members, newMember],
     }));
-    setNewMember({ name: '', role: '', email: '' }); // 입력값 초기화
+    setNewMember({ name: '', role: '', email: '' });
     closeModal();
   };
 
   const handleAddSchedule = () => {
+    if (!newSchedule.task || !newSchedule.date) return alert('모든 필드를 입력해주세요.');
+
     setTeam(prevTeam => ({
       ...prevTeam,
       schedule: [...prevTeam.schedule, newSchedule],
     }));
-    setNewSchedule({ task: '', date: '' }); // 입력값 초기화
+    setNewSchedule({ task: '', date: '' });
     closeModal();
   };
+
+  if (loading) return <div className="loading">알림 데이터를 로드 중입니다...</div>;
+  if (error) return <div className="error">{error}</div>;
 
   if (!team) {
     return <div>데이터를 불러올 수 없습니다.</div>;
@@ -42,6 +85,9 @@ function Teampage() {
       <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
         <div className="teamname-title">
           <p>{team.title}</p>
+          <button onClick={() => setShowNotificationModal(true)} className="teampage-add-button">
+            <img src={alarm} alt="alarm" className="alarmimg" />
+          </button>
         </div>
         <section className="teampage-table">
           <p>팀원</p>
@@ -152,6 +198,13 @@ function Teampage() {
             </div>
           </div>
         </div>
+      )}
+      {showNotificationModal && (
+        <AlarmModal
+          notifications={notifications}
+          onClose={() => setShowNotificationModal(false)}
+          onRemoveNotification={handleRemoveNotification}
+        />
       )}
     </div>
   );
