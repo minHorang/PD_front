@@ -33,8 +33,8 @@ function Recrapply() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          project_id,
-          user_id,
+          project_id: 1,
+          user_id: 1,
           message,
         }),
       });

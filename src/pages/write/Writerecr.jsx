@@ -51,7 +51,7 @@ function Writerecr() {
 
     try {
       setLoading(true); // 로딩 상태 시작
-      const response = await fetch(`${baseURL}/recruitment`, {
+      const response = await fetch(`${baseURL}/project`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

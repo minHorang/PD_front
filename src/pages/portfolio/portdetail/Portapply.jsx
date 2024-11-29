@@ -5,23 +5,24 @@ import './Portapply.css';
 function Portapply() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { portfolio_id, project_id } = location.state || {};
+  const { portfolio_id } = location.state || {}; // 프로젝트 ID는 location에서 가져옴
   const [myPosts, setMyPosts] = useState([]);
-  const [teamIntro, setTeamIntro] = useState('');
+  const [selectedProjectId, setSelectedProjectId] = useState(''); // 선택한 팀 소개서 ID
   const [suggestMessage, setSuggestMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const baseURL = 'http://localhost:4000';
 
+  // 팀 소개서 목록 가져오기
   useEffect(() => {
     const fetchMyPosts = async () => {
       try {
-        const response = await fetch(`${baseURL}/portfolio/suggest`);
+        const response = await fetch(`${baseURL}/portfolio/title`); // API 호출
         const result = await response.json();
 
         if (result.isSuccess) {
-          setMyPosts(result.posts || []);
+          setMyPosts(result.result.portfolio || []); // 팀 소개서 데이터 저장
         } else {
           console.error('팀 소개서 데이터를 가져오는 데 실패했습니다.');
         }
@@ -33,16 +34,17 @@ function Portapply() {
     fetchMyPosts();
   }, []);
 
+  // 제출 핸들러
   const handleSubmit = async event => {
     event.preventDefault();
 
-    if (!portfolio_id || !project_id) {
-      alert('유효하지 않은 요청입니다.');
+    if (!selectedProjectId || !portfolio_id) {
+      alert('유효하지 않은 요청입니다. 팀 소개서 또는 프로젝트를 선택해주세요.');
       return;
     }
 
-    if (!teamIntro.trim() || !suggestMessage.trim()) {
-      alert('팀 소개서와 제의 메시지를 작성해주세요.');
+    if (!suggestMessage.trim()) {
+      alert('제의 메시지를 작성해주세요.');
       return;
     }
 
@@ -54,11 +56,12 @@ function Portapply() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          portfolio_id,
-          project_id,
+          portfolio_id: 2,
+          project_id: selectedProjectId,
           suggest_message: suggestMessage,
         }),
       });
+
       const result = await response.json();
 
       if (result.isSuccess) {
@@ -88,16 +91,16 @@ function Portapply() {
             <label htmlFor="team-intro">팀 소개서</label>
             <select
               id="team-intro"
-              value={teamIntro}
-              onChange={e => setTeamIntro(e.target.value)}
+              value={selectedProjectId}
+              onChange={e => setSelectedProjectId(e.target.value)} // 선택한 포트폴리오 ID 저장
               required
             >
               <option value="" disabled>
                 팀 소개를 선택해주세요
               </option>
-              {myPosts.map((post, index) => (
-                <option key={index} value={post}>
-                  {post}
+              {myPosts.map(post => (
+                <option key={post.project_id} value={post.project_id}>
+                  {post.title}
                 </option>
               ))}
             </select>
