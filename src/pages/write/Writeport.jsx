@@ -57,7 +57,7 @@ function Writeport() {
 
       const result = await response.json();
 
-      if (result.success) {
+      if (result.isSuccess) {
         alert('포트폴리오가 성공적으로 등록되었습니다.');
         navigate('/mypage'); // 성공 시 마이페이지로 이동
       } else {

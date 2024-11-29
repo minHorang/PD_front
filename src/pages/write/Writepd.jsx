@@ -9,13 +9,9 @@ function Writepd() {
   const getCategoryFromSub = sub => {
     switch (sub) {
       case 'i':
-        return [{ first: '', second: '' }];
       case 'md':
-        return [{ first: '', second: '' }];
       case 'l':
-        return [{ first: '', second: '' }];
       case 'ms':
-        return [{ first: '', second: '' }];
       default:
         return [{ first: '', second: '' }];
     }
@@ -38,7 +34,6 @@ function Writepd() {
   };
 
   const handleCategoryChange = (index, key, value) => {
-    if (!Array.isArray(category)) return;
     const updatedCategories = [...category];
     updatedCategories[index][key] = value;
     setCategory(updatedCategories);
@@ -59,12 +54,7 @@ function Writepd() {
       return;
     }
 
-    const isValidCategory = category.every(cat => {
-      if (category.length === 1) {
-        return cat.first;
-      }
-      return cat.first && cat.second;
-    });
+    const isValidCategory = category.every(cat => cat.first.trim() !== '');
 
     if (!isValidCategory) {
       alert('모든 카테고리를 올바르게 선택해주세요.');
@@ -94,18 +84,13 @@ function Writepd() {
 
       const result = await response.json();
 
-      if (result.success) {
+      if (result.isSuccess) {
         alert('모집공고가 성공적으로 등록되었습니다.');
-        setTitle('');
-        setProcess('');
-        setWanted('');
-        setPart('');
-        setDuration('');
-        setDescription('');
-        setCategory(getCategoryFromSub(sub));
         navigate('/mypage');
       } else {
-        setError(result.message || '모집공고 등록에 실패했습니다.');
+        const errorMessage =
+          result.message || '모집공고 등록에 실패했습니다. 입력값을 확인해주세요.';
+        setError(errorMessage);
       }
     } catch (error) {
       setError('API 호출 중 에러가 발생했습니다.');

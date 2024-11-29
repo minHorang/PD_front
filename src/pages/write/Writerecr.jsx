@@ -30,6 +30,7 @@ function Writerecr() {
   const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const user_id = 1;
 
   const baseURL = 'http://localhost:4000'; // API 베이스 URL
 
@@ -63,17 +64,27 @@ function Writerecr() {
           part,
           duration,
           description,
-          user_id: 1,
+          user_id,
           category,
         }),
       });
 
       const result = await response.json();
 
-      if (result.success) {
+      if (result.isSuccess) {
         alert('모집공고가 성공적으로 등록되었습니다.');
         navigate('/mypage'); // 성공 시 마이페이지로 이동
       } else {
+        console.log('API 응답:', result);
+        console.log('전송된 데이터:', {
+          user_id,
+          title,
+          category,
+          wanted,
+          part,
+          duration,
+          description,
+        });
         setError('모집공고 등록에 실패했습니다.');
       }
     } catch (error) {
