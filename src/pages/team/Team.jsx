@@ -8,10 +8,10 @@ function Team() {
 
   const renderComponent = () => {
     switch (selectedComponent) {
-      case 'IT':
-      case 'MD':
-      case 'LI':
-      case 'MS':
+      case 1:
+      case 2:
+      case 3:
+      case 4:
         return <Teamdata selectedComponent={selectedComponent} />;
       default:
         return null;
@@ -29,26 +29,26 @@ function Team() {
         <h1>Team</h1>
         <div className="sidebutton">
           <button
-            className={activeButton === 'IT' ? 'active' : ''}
-            onClick={() => handleButtonClick('IT')}
+            className={activeButton === 1 ? 'active' : ''}
+            onClick={() => handleButtonClick(1)}
           >
             개발
           </button>
           <button
-            className={activeButton === 'MD' ? 'active' : ''}
-            onClick={() => handleButtonClick('MD')}
+            className={activeButton === 2 ? 'active' : ''}
+            onClick={() => handleButtonClick(2)}
           >
             영상/미디어
           </button>
           <button
-            className={activeButton === 'LI' ? 'active' : ''}
-            onClick={() => handleButtonClick('LI')}
+            className={activeButton === 3 ? 'active' : ''}
+            onClick={() => handleButtonClick(3)}
           >
             문학
           </button>
           <button
-            className={activeButton === 'MS' ? 'active' : ''}
-            onClick={() => handleButtonClick('MS')}
+            className={activeButton === 4 ? 'active' : ''}
+            onClick={() => handleButtonClick(4)}
           >
             음악
           </button>
