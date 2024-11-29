@@ -69,11 +69,8 @@ function Portdetail() {
           <p>{item.title}</p>
         </div>
         <div className="portfolio-content">
-          <p>분류: {item.category}</p>
-          <p>기간: {item.duration}</p>
           <p>{item.description || '내용이 제공되지 않았습니다.'}</p>
         </div>
-        {/* 버튼 */}
         <div className="portbutton">
           <button onClick={() => handleportapply(item)}>프로젝트 제의하기</button>
         </div>
