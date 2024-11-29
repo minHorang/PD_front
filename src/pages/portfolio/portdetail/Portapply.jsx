@@ -17,7 +17,7 @@ function Portapply() {
   useEffect(() => {
     const fetchMyPosts = async () => {
       try {
-        const response = await fetch(`${baseURL}/my-posts`);
+        const response = await fetch(`${baseURL}/portfolio/suggest`);
         const result = await response.json();
 
         if (result.isSuccess) {

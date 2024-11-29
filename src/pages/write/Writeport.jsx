@@ -1,13 +1,29 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './Writeport.css';
 
 function Writeport() {
   const navigate = useNavigate();
+  const { sub } = useParams();
 
-  // 폼 입력 상태 관리
+  const getCategoryFromSub = sub => {
+    switch (sub) {
+      case 'i':
+        return 1;
+      case 'md':
+        return 2;
+      case 'l':
+        return 3;
+      case 'ms':
+        return 4;
+      default:
+        return null;
+    }
+  };
+  const category = getCategoryFromSub(sub);
+
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
+  const [part, setPart] = useState('');
   const [duration, setDuration] = useState('');
   const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
@@ -18,14 +34,14 @@ function Writeport() {
   const handleSubmit = async event => {
     event.preventDefault();
 
-    if (!title.trim() || !category.trim() || !duration.trim() || !description.trim()) {
+    if (!title.trim() || !part.trim() || !duration.trim() || !description.trim()) {
       alert('모든 필드를 입력해주세요.');
       return;
     }
 
     try {
       setLoading(true);
-      const response = await fetch(`${baseURL}/portfolio/register`, {
+      const response = await fetch(`${baseURL}/portfolio`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,6 +49,7 @@ function Writeport() {
         body: JSON.stringify({
           title,
           category,
+          part,
           duration,
           description,
         }),
@@ -77,12 +94,12 @@ function Writeport() {
 
           {/* 분류 */}
           <div className="W-port-field">
-            <label htmlFor="category">분류</label>
+            <label htmlFor="part">분류</label>
             <input
               type="text"
-              id="category"
-              value={category}
-              onChange={e => setCategory(e.target.value)}
+              id="part"
+              value={part}
+              onChange={e => setPart(e.target.value)}
               placeholder="ex. 무관, 스터디, 대회"
               required
             />

@@ -13,12 +13,12 @@ const Port = ({ selectedComponent }) => {
   useEffect(() => {
     const fetchData = async () => {
       if (!selectedComponent) {
-        return; // selectedComponent가 없으면 API 호출 중단
+        return;
       }
 
       try {
-        setLoading(true); // 로딩 상태 시작
-        const response = await fetch(`${baseURL}/portfolio/${selectedComponent}`);
+        setLoading(true);
+        const response = await fetch(`${baseURL}/portfolio/list?category=${selectedComponent}`);
         const result = await response.json();
 
         if (result.isSuccess) {
@@ -38,37 +38,18 @@ const Port = ({ selectedComponent }) => {
     fetchData();
   }, [selectedComponent]);
 
-  // 상세 페이지로 이동
   const handledetail = item => {
     navigate(`/portfolio/${item.id}`, { state: { ...item } });
   };
 
-  // 로딩 중일 때
   if (loading) {
     return <div className="loading">데이터를 불러오는 중...</div>;
   }
 
-  // 에러가 발생했을 때
   if (error) {
     return <div className="error">{error}</div>;
   }
 
-  // 데이터 필터링
-  const filteredData = data.filter(item => item.selectedComponent === selectedComponent);
-
-  /*
-const data = [
-  {
-    id: 19,
-    title: '문예 창작 팀원 구합니다.',
-    selectedComponent: 'LI',
-    selecttype: 'Port',
-    type: '팀 프로젝트',
-    time: '2024.12.01 ~ 2025.01.15',
-    content: '자기소개서',
-  },
-];
-*/
   return (
     <div className="portfolio-container">
       <div className="portfolio-topbar">
@@ -82,7 +63,7 @@ const data = [
           <p>모집 기간</p>
         </div>
       </div>
-      {filteredData.map((item, index) => (
+      {data.map((item, index) => (
         <div className="portfolio-array" key={index}>
           <div className="portfolio-title-content">
             <p onClick={() => handledetail(item)}>{item.title}</p>
