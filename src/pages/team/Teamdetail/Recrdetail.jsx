@@ -28,7 +28,7 @@ function Recrdetail() {
         const result = await response.json();
 
         if (result.isSuccess) {
-          setItem(result.result.project || null);
+          setItem(result.result.project[0] || null);
         } else {
           setError('데이터를 불러오는 데 실패했습니다.');
         }

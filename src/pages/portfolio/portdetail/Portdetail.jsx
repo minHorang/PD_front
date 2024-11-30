@@ -9,8 +9,9 @@ function Portdetail() {
   const [item, setItem] = useState(location.state || null);
   const [loading, setLoading] = useState(!item);
   const [error, setError] = useState(null);
-
   const baseURL = 'http://localhost:4000';
+
+  console.log(id);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,11 +23,14 @@ function Portdetail() {
 
       try {
         setLoading(true);
+        console.log(id);
         const response = await fetch(`${baseURL}/portfolio/detail?portfolio_id=${id}`);
         const result = await response.json();
 
+        console.log(result.result.portfolio[0]);
+
         if (result.isSuccess) {
-          setItem(result.result);
+          setItem(result.result.portfolio[0]);
         } else {
           setError('데이터를 가져오는 데 실패했습니다.');
         }
@@ -37,10 +41,8 @@ function Portdetail() {
       }
     };
 
-    if (!item) {
-      fetchData();
-    }
-  }, [id, item]);
+    fetchData();
+  }, []);
 
   const handleportapply = item => {
     if (!item || !id) {

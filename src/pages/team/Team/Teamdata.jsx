@@ -38,7 +38,7 @@ function Teamdata({ selectedComponent }) {
   }, [selectedComponent]);
 
   const handledetail = item => {
-    navigate(`/team/${item.id}`, { state: { ...item } }); // 상세 페이지로 이동
+    navigate(`/team/${item.project_id}`, { state: { ...item } }); // 상세 페이지로 이동
   };
 
   if (loading) {

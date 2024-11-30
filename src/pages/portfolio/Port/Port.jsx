@@ -39,7 +39,7 @@ const Port = ({ selectedComponent }) => {
   }, [selectedComponent]);
 
   const handledetail = item => {
-    navigate(`/portfolio/${item.id}`, { state: { ...item } });
+    navigate(`/portfolio/${item.portfolio_id}`, { state: { ...item } });
   };
 
   if (loading) {

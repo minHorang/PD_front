@@ -38,7 +38,7 @@ function PDdata({ selectedComponent }) {
   }, [selectedComponent]);
 
   const handledetail = item => {
-    navigate(`/projectdesign/detail/${item.id}`, { state: { ...item } }); // 상세 페이지로 이동
+    navigate(`/projectdesign/detail/${item.project_id}`, { state: { ...item } }); // 상세 페이지로 이동
   };
 
   if (loading) {
