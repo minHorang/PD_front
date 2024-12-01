@@ -60,7 +60,7 @@ const router = createBrowserRouter([
         element: <PDdetail />,
       },
       {
-        path: 'projectdesign/apply',
+        path: 'projectdesign/apply/:id',
         element: <PDapply />,
       },
       //마이페이지

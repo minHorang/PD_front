@@ -47,7 +47,7 @@ function PDdetail() {
       console.error('item 또는 id가 없습니다.');
       return;
     }
-    navigate(`/projectdesign/apply`, { state: { ...item } });
+    navigate(`/projectdesign/apply/${id}`, { state: { ...item } });
   };
 
   if (loading) {

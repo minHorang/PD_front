@@ -61,9 +61,25 @@ function Writepd() {
       return;
     }
 
+    // category 배열을 객체 형식으로 변환
+    const categoryObject = category.reduce((acc, cur, index) => {
+      const key =
+        index === 0
+          ? 'first'
+          : index === 1
+            ? 'second'
+            : index === 2
+              ? 'third'
+              : `extra${index + 1}`;
+      acc[key] = cur.first;
+      return acc;
+    }, {});
+
     try {
       setLoading(true);
       setError(null);
+
+      console.log(title, process, wanted, part, duration, description, categoryObject);
 
       const response = await fetch(`${baseURL}/collab`, {
         method: 'POST',
@@ -78,7 +94,7 @@ function Writepd() {
           duration,
           description,
           user_id: 1,
-          category,
+          category: categoryObject, // 변환된 객체 전달
         }),
       });
 

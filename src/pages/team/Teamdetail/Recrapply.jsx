@@ -1,24 +1,19 @@
 import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import './Recrapply.css';
 
 function Recrapply() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { project_id, user_id } = location.state || {};
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const { id } = useParams();
 
   const baseURL = 'http://localhost:4000';
 
   const handleSubmit = async event => {
     event.preventDefault();
-
-    if (!project_id || !user_id) {
-      alert('유효하지 않은 요청입니다.');
-      return;
-    }
 
     if (!message.trim()) {
       alert('자기소개서를 작성해주세요.');
@@ -33,7 +28,7 @@ function Recrapply() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          project_id: 1,
+          project_id: id,
           user_id: 1,
           message,
         }),

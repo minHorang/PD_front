@@ -44,11 +44,7 @@ function Recrdetail() {
   }, [id]);
 
   const handlerecrapply = () => {
-    if (!item || !item.id) {
-      console.error('item 또는 item.id가 없습니다.');
-      return;
-    }
-    navigate(`/team/${item.id}/apply`, { state: { ...item } });
+    navigate(`/team/${id}/apply`, { state: { ...item } });
   };
 
   if (loading) {

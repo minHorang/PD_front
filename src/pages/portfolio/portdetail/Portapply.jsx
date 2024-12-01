@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import './Portapply.css';
 
 function Portapply() {
@@ -11,6 +11,7 @@ function Portapply() {
   const [suggestMessage, setSuggestMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const { id } = useParams();
 
   const baseURL = 'http://localhost:4000';
 
@@ -18,9 +19,11 @@ function Portapply() {
   useEffect(() => {
     const fetchMyPosts = async () => {
       try {
-        const response = await fetch(`${baseURL}/portfolio/title`); // API 호출
+        console.log(id);
+        const response = await fetch(`${baseURL}/portfolio/title?id=1`); // API 호출
         const result = await response.json();
 
+        console.log(result);
         if (result.isSuccess) {
           setMyPosts(result.result.portfolio || []); // 팀 소개서 데이터 저장
         } else {
@@ -37,8 +40,9 @@ function Portapply() {
   // 제출 핸들러
   const handleSubmit = async event => {
     event.preventDefault();
+    console.log(selectedProjectId, suggestMessage);
 
-    if (!selectedProjectId || !portfolio_id) {
+    if (!selectedProjectId || !selectedProjectId) {
       alert('유효하지 않은 요청입니다. 팀 소개서 또는 프로젝트를 선택해주세요.');
       return;
     }
@@ -55,8 +59,9 @@ function Portapply() {
         headers: {
           'Content-Type': 'application/json',
         },
+
         body: JSON.stringify({
-          portfolio_id: 2,
+          portfolio_id: id,
           project_id: selectedProjectId,
           suggest_message: suggestMessage,
         }),

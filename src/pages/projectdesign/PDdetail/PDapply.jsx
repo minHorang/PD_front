@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import './PDapply.css';
 
 function PDapply() {
@@ -11,19 +11,10 @@ function PDapply() {
   const [error, setError] = useState(null);
 
   const baseURL = 'http://localhost:4000';
+  const { id } = useParams();
 
   const handleSubmit = async event => {
     event.preventDefault();
-
-    if (!project_id || !user_id) {
-      alert('유효하지 않은 요청입니다.');
-      return;
-    }
-
-    if (!message.trim()) {
-      alert('팀 소개서를 작성해주세요.');
-      return;
-    }
 
     try {
       setLoading(true);
@@ -33,11 +24,12 @@ function PDapply() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          project_id: 30,
+          project_id: id,
           user_id: 1,
           message,
         }),
       });
+      console.log();
       const result = await response.json();
 
       if (result.isSuccess) {

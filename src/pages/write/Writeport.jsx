@@ -32,6 +32,7 @@ function Writeport() {
   const baseURL = 'http://localhost:4000'; // API 베이스 URL
 
   const handleSubmit = async event => {
+    console.log(title, duration, description, part, category);
     event.preventDefault();
 
     if (!title.trim() || !part.trim() || !duration.trim() || !description.trim()) {
@@ -42,10 +43,10 @@ function Writeport() {
     try {
       setLoading(true);
       const response = await fetch(`${baseURL}/portfolio`, {
-        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        method: 'POST',
         body: JSON.stringify({
           title,
           category,
@@ -56,6 +57,8 @@ function Writeport() {
       });
 
       const result = await response.json();
+
+      console.log(result);
 
       if (result.isSuccess) {
         alert('포트폴리오가 성공적으로 등록되었습니다.');
